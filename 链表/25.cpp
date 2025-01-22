@@ -24,10 +24,10 @@ public:
             ListNode* head_another = prev->next;
             while(prev->next!=tail){
                 //1-2-3
-                ListNode* curr = prev->next;//3-2-1
-                prev->next = curr->next;
+                ListNode* curr = prev->next;//dummy-!1!-2-3 //dummy-!2!-3-1
+                prev->next = curr->next;//dummy-2 dummy-3
                 curr->next = tail->next;
-                tail->next = curr;
+                tail->next = curr;//dummy-2-3-1 //dummy-3-2-1
             }
         prev = head_another;
         tail = head_another;
